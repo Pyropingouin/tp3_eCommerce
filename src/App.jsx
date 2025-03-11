@@ -4,12 +4,10 @@ import InterfaceA from "./components/InterfaceA";
 import InterfaceB from "./components/InterfaceB";
 
 const App = () => {
-  // État pour suivre l'interface active
   const [selectedInterface, setSelectedInterface] = useState("A");
 
   return (
     <div>
-      {/* Barre de navigation pour choisir l'interface */}
       <nav className="p-3 bg-dark text-center">
         <button
           className={`btn mx-2 ${
@@ -29,7 +27,6 @@ const App = () => {
         </button>
       </nav>
 
-      {/* Affichage de l'interface choisie */}
       {selectedInterface === "A" ? <InterfaceA /> : <InterfaceB />}
     </div>
   );

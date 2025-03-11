@@ -1,4 +1,3 @@
-/* ======= GLOBAL ======= */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,7 +5,6 @@ body {
   background-color: #f5f5f5;
 }
 
-/* ======= HEADER ======= */
 header {
   background: #5f6770;
   color: white;
@@ -27,7 +25,6 @@ header nav {
   }
 }
 
-/* ======= CONTENU PRINCIPAL ======= */
 .container-fluid {
   max-width: 100%;
   margin: auto;
@@ -36,17 +33,16 @@ header nav {
 
 .content-wrapper {
   display: flex;
-  flex-direction: column; /* Mode mobile par défaut */
+  flex-direction: column;
   gap: 20px;
 }
 
 @media (min-width: 768px) {
   .content-wrapper {
-    flex-direction: row; /* En ligne sur écrans plus grands */
+    flex-direction: row;
   }
 }
 
-/* ======= ARTICLES ======= */
 .article-card {
   width: 100%;
   background: #e0e0e0;
@@ -66,7 +62,6 @@ header nav {
   align-items: center;
 }
 
-/* ======= BARRE LATÉRALE ======= */
 .sidebar {
   width: 100%;
 }
@@ -77,7 +72,6 @@ header nav {
   }
 }
 
-/* ======= RECHERCHE & CATÉGORIES ======= */
 .search-card,
 .category-card {
   background-color: #f8f9fa;
@@ -87,7 +81,6 @@ header nav {
   width: 100%;
 }
 
-/* ======= PIED DE PAGE ======= */
 footer {
   background: #5f6770;
   color: white;
@@ -98,10 +91,9 @@ footer {
   margin-top: 20px;
 }
 
-/* ======= GRAND CONTENEUR ======= */
 .hero-container {
   width: 100%;
-  height: 40vh; /* Réduit la hauteur du conteneur gris */
+  height: 40vh;
   background: #e0e0e0;
   display: flex;
   flex-direction: column;
@@ -109,113 +101,100 @@ footer {
   justify-content: center;
   position: relative;
   text-align: center;
-  padding-top: 30px; /* Ajuste l'espace interne */
-  margin-bottom: 120px; /* Ajoute de l'espace sous le grand rectangle gris */
+  padding-top: 30px;
+  margin-bottom: 120px;
 }
 
-/* ======= TEXTE EN HAUT ======= */
 .hero-content {
   width: 50%;
-  margin-bottom: 60px; /* Réduit l'espace entre le texte et les petits rectangles */
+  margin-bottom: 60px;
 }
 
-/* ======= PETITS RECTANGLES BLANCS ======= */
 .card-container {
   display: flex;
   justify-content: center;
   gap: 40px;
   position: absolute;
-  bottom: calc(-0.3 * 40vh); /* Ajuste pour qu’ils dépassent juste à moitié */
+  bottom: calc(-0.3 * 40vh);
 }
 
-/* ======= PETITS RECTANGLES BLANCS (agrandis à 25%) ======= */
 .small-card {
-  width: 20%; /* Augmente la largeur à environ 25% de la page */
-  height: 300px; /* Hauteur conservée */
+  width: 20%;
+  height: 300px;
   background: white;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  border: 5px solid #ccc; /* Ajoute une bordure grise */
+  border: 5px solid #ccc;
 }
 
-/* ======= CONTENEURS TEXTE + CARRÉ GRIS ======= */
 .text-image-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 225px; /* Hauteur similaire aux petits rectangles blancs */
+  height: 225px;
   padding: 40px 10%;
   gap: 40px;
 }
 
-/* Texte et carré gris prennent chacun 50% */
 .text-content,
 .image-placeholder {
   width: 50%;
 }
 
-/* Carré gris */
 .image-placeholder {
   height: 100%;
   background: #e0e0e0;
   border-radius: 8px;
 }
 
-/* ======= CORRECTION DU REVERSE ======= */
 .text-image-container.reverse .text-content {
-  order: 2; /* Texte passe à droite */
+  order: 2;
 }
 
 .text-image-container.reverse .image-placeholder {
-  order: 1; /* Image passe à gauche */
+  order: 1;
 }
 
-/* ======= MODE MOBILE (moins de 768px) ======= */
 @media (max-width: 768px) {
-  /* Ajuste la hauteur du grand conteneur gris */
   .hero-container {
     height: auto;
     padding-bottom: 50px;
   }
 
-  /* Afficher les petits rectangles en colonne */
   .card-container {
     display: flex;
-    flex-direction: column !important; /* Empile verticalement */
+    flex-direction: column !important;
     align-items: center;
-    gap: 20px; /* Espacement entre les cartes */
-    position: static; /* Supprime la superposition */
+    gap: 20px;
+    position: static;
     margin-top: 20px;
   }
 
   .small-card {
-    width: 90%; /* Utilise la largeur disponible */
-    max-width: 350px; /* Évite qu’ils soient trop larges */
-    height: auto; /* Ajuste la hauteur */
+    width: 90%;
+    max-width: 350px;
+    height: auto;
     padding: 20px;
   }
-  /* FORÇAGE : Supprime le reverse en mobile */
+
   .text-image-container {
     flex-direction: column !important;
   }
 
-  /* Supprime spécifiquement le reverse */
   .text-image-container.reverse {
     flex-direction: column !important;
   }
 
-  /* Ajuste les sections texte + carré gris */
   .text-image-container {
     text-align: center;
     height: auto;
     padding: 20px;
   }
 
-  /* Ajuste la taille du carré gris */
   .image-placeholder {
     width: 80%;
     height: 150px;
