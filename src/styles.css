@@ -110,6 +110,7 @@ footer {
   position: relative;
   text-align: center;
   padding-top: 30px; /* Ajuste l'espace interne */
+  margin-bottom: 120px; /* Ajoute de l'espace sous le grand rectangle gris */
 }
 
 /* ======= TEXTE EN HAUT ======= */
@@ -127,15 +128,50 @@ footer {
   bottom: calc(-0.3 * 40vh); /* Ajuste pour qu’ils dépassent juste à moitié */
 }
 
+/* ======= PETITS RECTANGLES BLANCS (agrandis à 25%) ======= */
 .small-card {
-  width: 150px;
-  height: 250px;
+  width: 20%; /* Augmente la largeur à environ 25% de la page */
+  height: 300px; /* Hauteur conservée */
   background: white;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
+  border: 5px solid #ccc; /* Ajoute une bordure grise */
+}
+
+/* ======= CONTENEURS TEXTE + CARRÉ GRIS ======= */
+.text-image-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 225px; /* Hauteur similaire aux petits rectangles blancs */
+  padding: 40px 10%;
+  gap: 40px;
+}
+
+/* Texte et carré gris prennent chacun 50% */
+.text-content,
+.image-placeholder {
+  width: 50%;
+}
+
+/* Carré gris */
+.image-placeholder {
+  height: 100%;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+/* ======= CORRECTION DU REVERSE ======= */
+.text-image-container.reverse .text-content {
+  order: 2; /* Texte passe à droite */
+}
+
+.text-image-container.reverse .image-placeholder {
+  order: 1; /* Image passe à gauche */
 }
 
 /* ======= RESPONSIVE ======= */
