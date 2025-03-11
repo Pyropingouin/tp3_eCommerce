@@ -174,19 +174,51 @@ footer {
   order: 1; /* Image passe à gauche */
 }
 
-/* ======= RESPONSIVE ======= */
+/* ======= MODE MOBILE (moins de 768px) ======= */
 @media (max-width: 768px) {
-  .hero-content {
-    width: 80%;
+  /* Ajuste la hauteur du grand conteneur gris */
+  .hero-container {
+    height: auto;
+    padding-bottom: 50px;
   }
 
+  /* Afficher les petits rectangles en colonne */
   .card-container {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column !important; /* Empile verticalement */
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Espacement entre les cartes */
+    position: static; /* Supprime la superposition */
+    margin-top: 20px;
   }
 
   .small-card {
+    width: 90%; /* Utilise la largeur disponible */
+    max-width: 350px; /* Évite qu’ils soient trop larges */
+    height: auto; /* Ajuste la hauteur */
+    padding: 20px;
+  }
+  /* FORÇAGE : Supprime le reverse en mobile */
+  .text-image-container {
+    flex-direction: column !important;
+  }
+
+  /* Supprime spécifiquement le reverse */
+  .text-image-container.reverse {
+    flex-direction: column !important;
+  }
+
+  /* Ajuste les sections texte + carré gris */
+  .text-image-container {
+    text-align: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  /* Ajuste la taille du carré gris */
+  .image-placeholder {
     width: 80%;
+    height: 150px;
+    margin: 20px auto;
   }
 }
