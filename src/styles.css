@@ -1,0 +1,89 @@
+/* ======= GLOBAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Fond gris clair */
+}
+
+/* ======= HEADER ======= */
+header {
+  background: #5f6770; /* Un gris plus foncé pour plus de contraste */
+  color: white;
+  height: 100px; /* Ajusté pour un meilleur rendu */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======= LAYOUT PRINCIPAL ======= */
+.container-fluid {
+  max-width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 20px; /* Ajoute un espacement exact entre les colonnes */
+  align-items: flex-start;
+}
+
+/* ======= ARTICLES ======= */
+.article-card {
+  width: 100%; /* S'assure que la carte reste dans sa colonne */
+  height: auto; /* Adapte la hauteur en fonction du contenu */
+  background: #e0e0e0; /* Gris plus clair pour meilleur contraste */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.article-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ======= ALIGNEMENT DES INFOS D'ARTICLE ======= */
+.article-card .article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ======= BOUTON ======= */
+.article-card button {
+  align-self: flex-end; /* S'assure que le bouton colle à droite */
+}
+
+/* ======= BARRE LATÉRALE ======= */
+.sidebar {
+  width: 30%;
+  min-width: 250px;
+}
+
+.search-card,
+.category-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.search-card {
+  margin-bottom: 15px;
+}
+
+/* ======= FOOTER ======= */
+footer {
+  background: #5f6770;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
