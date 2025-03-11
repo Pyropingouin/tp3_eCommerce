@@ -1,31 +1,31 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Col, Card, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
   faUser,
   faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import "../styles.css";
+import "../styles.css"; // Styles personnalisés après
 
 const InterfaceA = () => {
   return (
     <>
       {/* En-tête */}
-      <header>
+      <header className="text-center">
         <h1 className="fw-bold">LOGO</h1>
-        <nav>
-          <a href="#" className="mx-3 text-white">
+        <nav className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+          <a href="#" className="mx-2 text-white">
             Accueil
           </a>
-          <a href="#" className="mx-3 text-white">
+          <a href="#" className="mx-2 text-white">
             Blogue
           </a>
-          <a href="#" className="mx-3 text-white">
+          <a href="#" className="mx-2 text-white">
             À propos
           </a>
-          <a href="#" className="mx-3 text-white">
+          <a href="#" className="mx-2 text-white">
             Nous joindre
           </a>
         </nav>
@@ -33,19 +33,18 @@ const InterfaceA = () => {
 
       {/* Contenu principal */}
       <Container fluid>
-        <div className="content-wrapper">
+        <Row className="content-wrapper">
           {/* Articles */}
-          <Col md={8}>
+          <Col xs={12} md={8}>
             {[1, 2].map((_, index) => (
               <Card className="mb-4 shadow-sm article-card" key={index}>
                 <Card.Body>
                   <Card.Title>Titre de l'article</Card.Title>
                   <Card.Text>
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s...
+                    typesetting industry...
                   </Card.Text>
-                  <div className="article-footer">
+                  <div className="article-footer d-flex justify-content-between">
                     <div>
                       <FontAwesomeIcon icon={faCalendarAlt} /> 01/12/2020
                       <span className="ms-3">
@@ -61,8 +60,8 @@ const InterfaceA = () => {
             ))}
           </Col>
 
-          {/* Barre latérale */}
-          <Col className="sidebar">
+          {/* Barre latérale (Recherche + Catégories) */}
+          <Col xs={12} md={4} className="sidebar">
             <Card className="search-card mb-3">
               <Card.Body>
                 <h5>Recherche</h5>
@@ -90,11 +89,11 @@ const InterfaceA = () => {
               </Card.Body>
             </Card>
           </Col>
-        </div>
+        </Row>
       </Container>
 
       {/* Pied de page */}
-      <footer>
+      <footer className="text-center">
         <small>© Nom du blogue - Tous droits réservés.</small>
         <span className="mx-3">|</span>
         <small>Crédits agence web</small>
